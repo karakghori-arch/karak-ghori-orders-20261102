@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://*.supabase.co;">
+  <meta name="theme-color" content="#08090b">
+  <title>Karak Ghori</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="workflow.css">
+  <script defer src="menu-data.js"></script>
+  <script defer src="menu-image-data.js"></script>
+  <script defer src="catalog.js"></script>
+  <script defer src="i18n.js"></script>
+  <script defer src="order.js"></script>
+  <script defer src="staff-orders.js"></script>
+  <script defer src="cloud-config.js"></script>
+  <script defer src="cloud-orders.js"></script>
+  <script defer src="renderer-app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-tab="ghori" aria-label="Go to Karak Ghori home">
+        <span class="brand-mark"><img src="assets/karak-ghori-mark.png" alt=""></span>
+        <span class="brand-name">KARAK <b>GHORI</b><small>TEA · BITES · GOOD TIMES</small></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-button" data-tab="home">Home</button>
+        <button class="nav-button active" data-tab="ghori">Karak Ghori</button>
+        <button class="nav-button" data-tab="menu">Menu</button>
+        <button class="nav-button cart-nav" data-tab="cart">Cart <span id="cart-count" class="count-badge hidden">0</span></button>
+      </nav>
+      <button class="language-toggle" data-action="language" aria-label="Change language">عربي</button>
+      <button class="search-shortcut" data-tab="search" aria-label="Search menu"><span>⌕</span><kbd>Search</kbd></button>
+    </header>
+    <main id="app-main" tabindex="-1"></main>
+    <footer class="app-footer"><span id="footer-made-fresh">Made fresh, served with warmth.</span><span class="footer-legal"><a href="privacy-policy.html" id="privacy-link">Privacy policy</a> · <a href="terms-conditions.html" id="terms-link">Terms &amp; conditions</a></span><span id="footer-price-label">Menu prices · BHD</span></footer>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

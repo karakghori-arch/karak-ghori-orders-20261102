@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Karak Ghori staff order receiver">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://*.supabase.co;">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Karak Ghori · Staff Orders</title>
+  <script defer src="cloud-config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Karak Ghori Staff Orders">
+        <img src="icon.svg" alt="">
+        <span>KARAK <b>GHORI</b><small>STAFF ORDER DESK</small></span>
+      </a>
+      <button id="install-button" class="secondary-button" type="button" hidden>Install app</button>
+      <button id="signout-button" class="secondary-button" type="button" hidden>Sign out</button>
+    </header>
+
+    <section id="login-view" class="login-panel">
+      <p class="eyebrow">STAFF ACCESS</p>
+      <h1>Receive customer orders</h1>
+      <p class="muted">Sign in with the staff account provided by your administrator.</p>
+      <form id="login-form">
+        <label>Email<input name="email" type="email" autocomplete="username" required maxlength="254"></label>
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+        <p id="login-error" class="error" role="alert" hidden></p>
+        <button class="primary-button" type="submit">Sign in</button>
+      </form>
+    </section>
+
+    <section id="orders-view" hidden>
+      <div class="page-heading">
+        <div><p class="eyebrow">LIVE ORDER INBOX</p><h1>Customer orders</h1></div>
+        <button id="refresh-button" class="secondary-button" type="button">Refresh</button>
+      </div>
+      <p class="muted">Customer requests are not confirmed orders. Verify availability, prices, and any delivery charge with the customer.</p>
+      <p id="connection-status" class="notice" role="status" aria-live="polite"></p>
+      <div id="order-list" class="order-list" aria-live="polite"></div>
+    </section>
+  </main>
+</body>
+</html>

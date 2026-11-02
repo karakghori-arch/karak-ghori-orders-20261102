@@ -1,0 +1,13 @@
+{
+  "name": "Karak Ghori Staff Orders",
+  "short_name": "KG Staff",
+  "description": "Receive and manage Karak Ghori customer orders",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#08090b",
+  "theme_color": "#08090b",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
